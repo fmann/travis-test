@@ -1,0 +1,26 @@
+language: php
+
+php:
+  - 5.4
+
+install:
+
+  # Update apt-get
+  - sudo apt-get update
+
+  # Install Drush
+  - pear channel-discover pear.drush.org
+  - pear install drush/drush-5.9.0
+  - phpenv rehash
+
+  # DEBUG
+  - which drush
+  - drush status
+  - which php
+  - php --ini
+
+before_script:
+
+script:
+
+  - echo "hello world"
