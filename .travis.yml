@@ -11,14 +11,12 @@ install:
   # - pear channel-discover pear.drush.org
   # - pear install drush/drush-5.9.0
   - cd /usr/local
-  - which php
-  - php --version
   - phpenv rehash
-  - git clone git@github.com:drush-ops/drush.git
-  - cd drush
-  - git checkout 5.x
-  - chmod u+x drush
-  - ./drush --version
+  - sudo git clone --branch 5.x git@github.com:drush-ops/drush.git
+  - sudo ln -s /usr/local/drush-5.9.0/drush /usr/bin/drush
+  - sudo chmod u+x drush/drush
+  - drush --version
+  - drush status
 
 before_script:
 
