@@ -11,6 +11,7 @@ install:
   # Install Drush
   - composer self-update
   - composer global require drush/drush:5.*
+  - which php5
   - which drush
   - drush status
   - phpenv rehash
