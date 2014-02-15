@@ -18,6 +18,7 @@ install:
   - sudo chmod ugo+x drush/drush
   - drush --version
   - drush status
+  - echo "127.0.0.1 behat.test.dev" | sudo tee -a /etc/hosts
 
 before_script:
 
