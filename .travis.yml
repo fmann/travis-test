@@ -9,7 +9,7 @@ install:
   - sudo apt-get update
 
   # Install Drush
-  composer global require drush/drush:5.9.0
+  - composer global require drush/drush:5.9.0
   - which drush
   - drush status
   - phpenv rehash
