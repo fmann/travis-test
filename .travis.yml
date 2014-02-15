@@ -18,7 +18,7 @@ install:
   - sudo chmod ugo+x drush/drush
   - drush --version
   - drush status
-  - drush runserver --server=builtin 80 &
+  - sudo drush runserver --server=builtin 80 &
 
 before_script:
 
