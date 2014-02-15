@@ -13,7 +13,7 @@ install:
   - cd /usr/local
   - phpenv rehash
   - sudo git clone --branch 5.x https://github.com/drush-ops/drush.git drush
-  - sudo ln -s /usr/local/drush-5.9.0/drush /usr/bin/drush
+  - sudo ln -s /usr/local/drush/drush /usr/bin/drush
   - sudo chmod u+x drush/drush
   - drush --version
   - drush status
