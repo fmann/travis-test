@@ -14,11 +14,11 @@ install:
   - which php
   - php --version
   - phpenv rehash
-  - sudo wget http://pear.drush.org/get/drush-5.9.0.tgz
-  - sudo tar -xzvf drush-5.9.0.tgz
-  - sudo chmod ugo+x drush-5.9.0/drush
-  - sudo ln -s /usr/local/drush-5.9.0/drush /usr/bin/drush
-  - drush status
+  - git clone git@github.com:drush-ops/drush.git
+  - cd drush
+  - git checkout 5.x
+  - chmod u+x drush
+  - ./drush --version
 
 before_script:
 
