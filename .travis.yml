@@ -12,7 +12,7 @@ install:
   # - pear install drush/drush-5.9.0
   - cd /usr/local
   - which php
-  - export PATH=$PATH:/home/travis/.phpenv/shims/php
+  - php --version
   - sudo wget http://pear.drush.org/get/drush-5.9.0.tgz
   - sudo tar -xzvf drush-5.9.0.tgz
   - sudo chmod ugo+x drush-5.9.0/drush
