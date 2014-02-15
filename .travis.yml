@@ -11,6 +11,9 @@ install:
   # Install Drush
   # - pear channel-discover pear.drush.org
   # - pear install drush/drush-5.9.0
+  - STARTING_DIR=`pwd`
+  - echo $STARTING_DIR
+  - ls
   - cd /usr/local
   - phpenv rehash
   - which php
@@ -21,7 +24,7 @@ install:
   - sudo chmod ugo+x drush/drush
   - drush --version
   - drush status
-  - cd ~
+  - cd $STARTING_DIR
   - mkdir drupal
   - echo '<?php phpinfo(); ?>' > test.php
 
@@ -33,7 +36,7 @@ before_script:
   - echo "cgi.fix_pathinfo = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
   # configure apache virtual hosts
-  - sudo cp -f /home/travis/apache.conf.example /etc/apache2/sites-available/default
+  - sudo cp -f $STARTING_DIR/apache.conf.example /etc/apache2/sites-available/default
   - cd drupal
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
   - sudo service apache2 restart
