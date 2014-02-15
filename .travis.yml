@@ -10,7 +10,7 @@ install:
 
   # Install Drush
   - composer self-update
-  - composer global require drush/drush:5.9.0
+  - composer global require drush/drush:5.*
   - which drush
   - drush status
   - phpenv rehash
