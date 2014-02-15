@@ -14,6 +14,7 @@ install:
   - cd /usr/local
   - phpenv rehash
   - which php
+  - sudo ln -s /home/travis/.phpenv/shims/php /usr/bin/php
   - sudo git clone --branch 5.x https://github.com/drush-ops/drush.git drush
   - sudo ln -s /usr/local/drush/drush /usr/bin/drush
   - sudo chown travis /usr/local/drush/lib
