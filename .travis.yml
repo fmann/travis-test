@@ -9,8 +9,16 @@ install:
   - sudo apt-get update
 
   # Install Drush
-  - pear channel-discover pear.drush.org
-  - pear install drush/drush-5.9.0
+  - cd /usr/local
+  - which php
+  - export PATH=$PATH:/home/travis/.phpenv/shims/php
+  - sudo wget http://pear.drush.org/get/drush-5.9.0.tgz
+  - sudo tar -xzvf drush-5.9.0.tgz
+  - sudo chmod ugo+x drush-5.9.0/drush
+  - echo $PATH
+  - sudo ln -s /usr/local/drush-5.9.0/drush /usr/bin/drush
+  - which drush
+  - drush status
   - phpenv rehash
 
   # DEBUG
