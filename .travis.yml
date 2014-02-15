@@ -21,6 +21,7 @@ install:
   - sudo chmod ugo+x drush/drush
   - drush --version
   - drush status
+  - cd ~
   - mkdir drupal
 
 before_script:
@@ -35,6 +36,7 @@ before_script:
   - cd drupal
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
   - sudo service apache2 restart
+
 script:
 
   - echo "hello world"
