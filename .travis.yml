@@ -23,6 +23,7 @@ install:
   - drush status
   - cd ~
   - mkdir drupal
+  - echo '<?php phpinfo(); ?>' > test.php
 
 before_script:
   - sudo apt-get install apache2 libapache2-mod-fastcgi
@@ -40,3 +41,4 @@ before_script:
 script:
 
   - echo "hello world"
+  - curl http://127.0.0.1/test.php
