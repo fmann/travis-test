@@ -9,6 +9,8 @@ install:
   - sudo apt-get update
 
   # Install Drush
+  - composer self-update
+  - composer update
   - composer global require drush/drush:5.9.0
   - which drush
   - drush status
