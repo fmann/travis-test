@@ -12,13 +12,12 @@ install:
   # - pear install drush/drush-5.9.0
   - cd /usr/local
   - which php
-  - which php5
   - export PATH=$PATH:/home/travis/.phpenv/shims/php
   - sudo wget http://pear.drush.org/get/drush-5.9.0.tgz
   - sudo tar -xzvf drush-5.9.0.tgz
   - sudo chmod ugo+x drush-5.9.0/drush
   - sudo ln -s /usr/local/drush-5.9.0/drush /usr/bin/drush
-  - sudo ln -s /usr/bin/php5 /usr/bin/php
+  - sudo ln -s /home/travis/.phpenv/shims/php /usr/bin/php
   - drush status
   - phpenv rehash
 
