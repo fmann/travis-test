@@ -9,23 +9,10 @@ install:
   - sudo apt-get update
 
   # Install Drush
-  - cd /usr/local
-  - which php
-  - export PATH=$PATH:/home/travis/.phpenv/shims/php
-  - sudo wget http://pear.drush.org/get/drush-5.9.0.tgz
-  - sudo tar -xzvf drush-5.9.0.tgz
-  - sudo chmod ugo+x drush-5.9.0/drush
-  - sudo ln -s /usr/local/drush-5.9.0/drush /usr/bin/drush
-  - sudo ln -s /home/travis/.phpenv/shims/php /usr/bin/php
+  composer global require drush/drush:5.9.0
   - which drush
   - drush status
   - phpenv rehash
-
-  # DEBUG
-  - which drush
-  - drush status
-  - which php
-  - php --ini
 
 before_script:
 
