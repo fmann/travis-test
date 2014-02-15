@@ -1,8 +1,8 @@
 <VirtualHost *:80>
 
-  DocumentRoot /home/travis/drupal
+  DocumentRoot /home/travis/build/fmann/travis-test/drupal
 
-  <Directory "/home/travis/drupal">
+  <Directory "/home/travis/build/fmann/travis-test/drupal">
     Options FollowSymLinks MultiViews ExecCGI
     AllowOverride All
     Order deny,allow
