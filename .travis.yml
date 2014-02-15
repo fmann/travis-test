@@ -7,6 +7,7 @@ install:
 
   # Update apt-get
   - sudo apt-get update
+  - sudo phpenv global 5.4
   # Install Drush
   # - pear channel-discover pear.drush.org
   # - pear install drush/drush-5.9.0
