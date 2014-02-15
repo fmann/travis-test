@@ -7,13 +7,13 @@ install:
 
   # Update apt-get
   - sudo apt-get update
-  - sudo echo "PATH=home/travis/.phpenv/bin:$PATH" >> /root/.bash_profile
-  - sudo phpenv global 5.4
+
   # Install Drush
   # - pear channel-discover pear.drush.org
   # - pear install drush/drush-5.9.0
   - cd /usr/local
   - phpenv rehash
+  - which php
   - sudo git clone --branch 5.x https://github.com/drush-ops/drush.git drush
   - sudo ln -s /usr/local/drush/drush /usr/bin/drush
   - sudo chown travis /usr/local/drush/lib
