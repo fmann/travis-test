@@ -7,7 +7,7 @@ install:
 
   # Update apt-get
   - sudo apt-get update
-  - sudo export PATH=home/travis/.phpenv/bin:$PATH
+  - sudo echo "PATH=home/travis/.phpenv/bin:$PATH" >> /root/.bash_profile
   - sudo phpenv global 5.4
   # Install Drush
   # - pear channel-discover pear.drush.org
