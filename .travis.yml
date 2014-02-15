@@ -26,7 +26,7 @@ install:
   - drush status
   - cd $STARTING_DIR
   - mkdir drupal
-  - echo '<?php phpinfo(); ?>' > test.php
+  - echo '<?php phpinfo(); ?>' > drupal/test.php
 
 before_script:
   - sudo apt-get install apache2 libapache2-mod-fastcgi
@@ -38,7 +38,6 @@ before_script:
   # configure apache virtual hosts
   - sudo cp -f $STARTING_DIR/apache.conf.example /etc/apache2/sites-available/default
   - cd drupal
-  - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
   - sudo service apache2 restart
 
 script:
